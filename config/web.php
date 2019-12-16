@@ -16,6 +16,7 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'fjjtltkmfmde5476568',
         ],
+
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -51,6 +52,18 @@ $config = [
             ],
         ],
         */
+    ],
+    'modules' => [
+        'user' => [
+            'class' => 'dektrium\user\Module',
+            'enableUnconfirmedLogin' => true,
+            'confirmWithin' => 21600,
+            'cost' => 12,
+            'admins' => ['admin']
+        ],
+        [
+            'rbac' => 'dektrium\rbac\RbacWebModule'
+        ]
     ],
     'params' => $params,
 ];
