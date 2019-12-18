@@ -65,6 +65,11 @@ $config = [
             'rbac' => 'dektrium\rbac\RbacWebModule'
         ]
     ],
+    'controllerMap' => [
+        'migration' => [
+            'class' => 'bizley\migration\controllers\MigrationController',
+        ]
+    ],
     'params' => $params,
 ];
 
